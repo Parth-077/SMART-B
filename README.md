@@ -50,18 +50,17 @@ Barcode Scanning: WebRTC + JS Libraries (like QuaggaJS or ZXing)
 🧪 How to Run Locally
 Clone the repository:
 
-'''bash
+
 git clone https://github.com/yourusername/smart-b.git
+
 cd smart-b
 
 Install dependencies:
 
-''bash
 npm install
 
 Start the server:
 
-''bash
 npm start
 
 Open your browser and visit:
