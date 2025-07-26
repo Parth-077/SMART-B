@@ -1,0 +1,421 @@
+/* <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.menu-button {
+  background-color: #e5d4f0;
+  border-radius: 1.5rem;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.menu-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+body {
+  background-color: #a7d4cc;
+  min-height: 100vh;
+}
+.header-section {
+  background-color: #e5d4f0;
+  border-radius: 2rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.section-title {
+  background-color: #e5d4f0;
+  border-radius: 1.5rem;
+  padding: 0.75rem 2.5rem;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.icon-container {
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+  transition: all 0.3s;
+}
+.menu-button:hover .icon-container {
+  background-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.1);
+}
+.bottom-nav {
+  backdrop-filter: blur(10px);
+  background-color: rgba(229, 212, 240, 0.9);
+  padding: 0.25rem;
+  height: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+.sales-arrow {
+  font-size: 2rem;
+  color: #4caf50;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+.menu-text {
+  font-weight: 600;
+  color: #4a5568;
+}
+.main-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+@media (max-width: 768px) {
+  .main-container {
+    padding: 1rem;
+  }
+
+  .header-section {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    padding: 0.5rem 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  .menu-text {
+    font-size: 0.9rem;
+  }
+
+  .icon-container {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .sales-amount {
+    font-size: 1.5rem;
+  }
+
+  .bottom-nav {
+    padding: 0.5rem;
+  }
+
+  /* Adjust modal positioning for mobile */
+  .modal-container {
+    margin-top: 10px;
+    width: 95%;
+  }
+
+  /* Make tables scrollable horizontally */
+  .table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* Add specific grid adjustments for different screen sizes */
+@media (max-width: 640px) {
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-cols-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .menu-button {
+    padding: 1rem;
+  }
+
+  .header-section {
+    font-size: 1.25rem;
+  }
+
+  .sales-arrow {
+    font-size: 1.5rem;
+  }
+
+  .nav-icon-container {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  .nav-text {
+    font-size: 0.65rem;
+  }
+  .nav-button {
+    padding: 0.2rem 0.5rem;
+  }
+  .nav-icon {
+    font-size: 0.875rem;
+  }
+}
+
+/* Update bottom nav styles */
+.nav-icon-container {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.125rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+}
+
+.nav-button {
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s;
+}
+
+.nav-text {
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+/* Update main content bottom margin to prevent overlap */
+.mb-20 {
+  margin-bottom: 4rem;
+}
+
+/* Add these to your existing styles */
+.viewport {
+  position: relative;
+  background: #000;
+}
+.viewport > video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.viewport > canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#interactive.viewport {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+/* Update the scanner modal styles */
+#scannerModal .viewport {
+  position: relative;
+  width: 100%;
+  height: 300px; /* Adjusted for mobile */
+  background: #000;
+}
+
+@media (max-width: 640px) {
+  #scannerModal .bg-white {
+    margin: 10px;
+    width: calc(100% - 20px);
+  }
+
+  #scannerModal .viewport {
+    height: 240px;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #333;
+}
+
+.close-btn:hover {
+  color: #f00;
+}
+
+/* Table Styles */
+.detail-table {
+  @apply w-full border-separate border-spacing-0 mt-4;
+}
+
+.detail-table th,
+.detail-table td {
+  @apply p-4 text-left border-b border-gray-200;
+}
+
+.detail-table th {
+  @apply bg-gray-50 font-semibold uppercase text-sm text-gray-600 tracking-wider;
+}
+
+.detail-table tr {
+  @apply transition-all duration-200 ease-in-out hover:translate-x-1 hover:bg-gray-50;
+}
+
+/* Scrollbar Styles */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #cbd5e0 #f7fafc;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  @apply w-2;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  @apply bg-gray-50;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded hover:bg-gray-400;
+}
+
+/* Sticky Header */
+.sticky-header {
+  @apply sticky top-0 z-10 bg-white shadow-sm;
+}
+
+/* Update the inventory and reports tables to use these new styles */
+#inventoryModal .overflow-auto,
+#reportsModal .overflow-auto {
+  @apply custom-scrollbar;
+}
+
+/* Stats Card Hover Effect */
+.stats-card {
+  @apply bg-gray-50 rounded-lg p-6 shadow-sm transition-transform duration-200 hover:-translate-y-0.5;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .modal-container {
+    @apply m-2 p-4;
+  }
+
+  .detail-table th,
+  .detail-table td {
+    @apply p-2 text-sm;
+  }
+}
+
+/* Sales Analysis Styles */
+.period-btn {
+  @apply px-4 py-2 bg-gray-100 text-gray-800 rounded-lg hover:bg-blue-100 transition-colors;
+}
+
+.period-btn.active {
+  @apply bg-blue-500 text-white hover:bg-blue-600;
+}
+
+.stat-card {
+  @apply bg-white p-4 rounded-lg shadow-sm border border-gray-100 flex flex-col;
+}
+
+.stat-card h4 {
+  @apply text-gray-600 text-sm font-medium mb-2;
+}
+
+.stat-card p {
+  @apply text-2xl font-bold text-gray-800;
+}
+
+/* Custom Date Picker Styles */
+.date-input {
+  @apply w-full p-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+}
+
+/* Chart Container Styles */
+#salesChartContainer {
+  @apply rounded-lg shadow-sm border border-gray-100 overflow-hidden transition-all duration-300;
+  max-height: 400px;
+  transition: max-height 0.3s ease;
+}
+
+#salesChartContainer.hidden {
+  max-height: 0;
+  overflow: hidden;
+}
+
+/* Rank badges for product rankings */
+.rank-badge {
+  @apply inline-flex items-center justify-center w-6 h-6 rounded-full text-white font-semibold text-xs;
+  background-color: #6B7280;
+}
+
+.rank-1 .rank-badge {
+  background-color: #FCD34D;
+  color: #92400E;
+}
+
+.rank-2 .rank-badge {
+  background-color: #E5E7EB;
+  color: #374151;
+}
+
+.rank-3 .rank-badge {
+  background-color: #D97706;
+  color: #FFFBEB;
+}
+
+/* Fix responsive issues for sales analysis */
+@media (max-width: 768px) {
+  .period-btn {
+    @apply px-3 py-1 text-sm;
+  }
+  
+  #customDatePicker .grid {
+    @apply grid-cols-1 gap-2;
+  }
+}
+
+/* Time distribution blocks */
+.time-block {
+  @apply p-3 rounded-lg text-center border transition-transform duration-200 hover:transform hover:scale-105;
+}
+
+.time-block h5 {
+  @apply mb-1;
+}
+
+.time-block p:first-of-type {
+  @apply font-bold text-lg;
+}
+
+.time-block.morning {
+  @apply bg-yellow-50 border-yellow-200;
+}
+
+.time-block.afternoon {
+  @apply bg-red-50 border-red-200;
+}
+
+.time-block.evening {
+  @apply bg-purple-50 border-purple-200;
+}
+
+.time-block.night {
+  @apply bg-blue-50 border-blue-200;
+}
+
+/* Enhanced styling for the reports section */
+.detail-container {
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Animated progress bars */
+@keyframes grow-width {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+.bg-blue-600.h-2\.5 {
+  animation: grow-width 1s ease-out;
+}
